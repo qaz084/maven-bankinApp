@@ -48,23 +48,56 @@ public class ServicioMenu {
         int opcion = 0;
         System.out.println("Hola admin");
         do {
-            System.out.println("1) Crear cuenta:");
-            System.out.println("2) Ver cuentas:");
-            System.out.println("3) Salir:");
-            opcion = leer.nextInt();
-            switch (opcion) {
-                case 1:
-                    sC.crearCuenta();
-                case 2:
-                    sB.verCuentas();
-                case 3:
-                    System.exit(0);
+            try{
+                System.out.println("1) Crear cuenta:");
+                System.out.println("2) Ver cuentas:");
+                System.out.println("3) Salir:");
+                opcion = leer.nextInt();
+                switch (opcion) {
+                    case 1:
+                        sC.crearCuenta();
+                        break;
+                    case 2:
+                        sB.verCuentas();
+                        break;
+                    case 3:
+                        System.exit(0);
+                }
+            }catch(Exception e){
+                System.out.println("Valor incorrecto, por favor, ingresa una opcion valida: ");
+                leer.next();
+                opcion= -1;
             }
         } while (opcion != 3);
-
     }
+
     public void menuNoAdmin() {
         System.out.println("no soy admin :( ");
+        sC = new ServicioCuenta();
+        int opcion = 0;
+        do {
+            try{
+                System.out.println("1) Retirar dinero:");
+                System.out.println("2) Depositar:");
+                System.out.println("3) Transferir:");
+                System.out.println("4) Salir:");
+                opcion = leer.nextInt();
+                switch (opcion) {
+                    case 1:
+                        sC.crearCuenta();
+                        break;
+                    case 2:
+                        sB.verCuentas();
+                        break;
+                    case 3:
+                        System.exit(0);
+                }
+            }catch(Exception e){
+                System.out.println("Valor incorrecto, por favor, ingresa una opcion valida: ");
+                leer.next();
+                opcion= -1;
+            }
+        } while (opcion != 4);
     }
 
 }
