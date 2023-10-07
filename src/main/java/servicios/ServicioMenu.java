@@ -82,15 +82,22 @@ public class ServicioMenu {
 
                 switch (opcion) {
                     case 1:
+                        System.out.println("---INGRESO A RETIRAR---");
                         System.out.println("Ingrese cuánto dinero quiere retirar: ");
                         double dineroAretirar = (leer.nextDouble());
                         sB.retirarDinero(cuenta1,dineroAretirar);
                         break;
                     case 2:
-                        sB.depositar(cuenta1);
+                        System.out.println("---INGRESO A DEPOSITAR---");
+                        System.out.println("Ingrese cuánto dinero quiere depositar: ");
+                        double montoADepositar = (leer.nextDouble());
+                        sB.depositar(cuenta1,montoADepositar);
                         break;
                     case 3:
-                        sB.transferir(cuenta1);
+                        System.out.println("---INGRESO A TRANSFERIR---");
+                        System.out.println("Ingrese cuánto dinero quiere transferir: ");
+                        double montoATransferir = (leer.nextDouble());
+                        sB.transferir(cuenta1,montoATransferir);
                         break;
                     case 4:
                         sB.verSaldo(cuenta1);
