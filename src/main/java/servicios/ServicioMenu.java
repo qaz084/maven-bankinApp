@@ -82,7 +82,9 @@ public class ServicioMenu {
 
                 switch (opcion) {
                     case 1:
-                        sB.retirarDinero(cuenta1);
+                        System.out.println("Ingrese cuánto dinero quiere retirar: ");
+                        double dineroAretirar = (leer.nextDouble());
+                        sB.retirarDinero(cuenta1,dineroAretirar);
                         break;
                     case 2:
                         sB.depositar(cuenta1);

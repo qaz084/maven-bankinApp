@@ -12,7 +12,7 @@ public class ServicioBanco {
     /*PATRON SINGLETON PARA GENERAR UNA INSTANCIA UNICA DEL SERVICIO
      Y MANTENER UN SOLO HASHMAP A LO LARGO DE
      TODOS LOS SERVICIOS */
-    private static final ServicioBanco instanciaSB=new ServicioBanco();
+    private static final ServicioBanco instanciaSB = new ServicioBanco();
     private Map<String, Cuenta> conjuntoDeCuentas = new HashMap<String, Cuenta>();
 
     public ServicioBanco() {
@@ -26,7 +26,9 @@ public class ServicioBanco {
         //CUENTA ADMIN
         conjuntoDeCuentas.put(cuenta04.getUsuario(), cuenta04);
     }
-    public static ServicioBanco getInstancia(){
+
+    //GETTER ESPECIAL QUE DEVUELVE LA UNICA INSTANCIA DEL SERVICIO BANCO
+    public static ServicioBanco getInstancia() {
         return instanciaSB;
     }
 
@@ -34,17 +36,14 @@ public class ServicioBanco {
 
 
     //METODOS PRINCIPALES
-    public void retirarDinero(Cuenta cuenta1) {
+    public void retirarDinero(Cuenta cuenta1,double dineroAretirar) {
         System.out.println("---INGRESO A RETIRAR---");
-        double montoARetirar = 0.0;
         double balance = cuenta1.getBalance();
 
         try {
-            System.out.println("Ingrese cuánto dinero quiere retirar: ");
-            montoARetirar = (leer.nextDouble());
 
-            if (montoARetirar <= balance) {
-                cuenta1.setBalance(balance - montoARetirar);
+            if (dineroAretirar <= balance) {
+                cuenta1.setBalance(balance - dineroAretirar);
                 System.out.println("Saldo disponible: $" + cuenta1.getBalance());
             } else {
                 System.out.println("Saldo insuficiente");
@@ -54,18 +53,6 @@ public class ServicioBanco {
             System.out.println("Valor incorrecto, ingrese un número: ");
             leer.next();
         }
-    }
-
-    public void verCuentas() {
-        for (String nombreUsuario : conjuntoDeCuentas.keySet()) {
-            Cuenta usuario = conjuntoDeCuentas.get(nombreUsuario);
-            System.out.println("usuario='" + usuario.getUsuario() + "', password='" + usuario.getPassword() +
-                    "', balance=" + usuario.getBalance() + "\n");
-        }
-    }
-
-    public void verSaldo(Cuenta cuenta) {
-        System.out.println("Tu saldo actual es de: " + cuenta.getBalance());
     }
 
     public void depositar(Cuenta cuenta1) {
@@ -128,7 +115,21 @@ public class ServicioBanco {
         }
     }
 
+
     //METODOS AUXILIARES
+
+    public void verSaldo(Cuenta cuenta) {
+        System.out.println("Tu saldo actual es de: " + cuenta.getBalance());
+    }
+
+    public void verCuentas() {
+        for (String nombreUsuario : conjuntoDeCuentas.keySet()) {
+            Cuenta usuario = conjuntoDeCuentas.get(nombreUsuario);
+            System.out.println("usuario='" + usuario.getUsuario() + "', password='" + usuario.getPassword() +
+                    "', balance=" + usuario.getBalance() + "\n");
+        }
+    }
+
     private Cuenta validarCuenta(String user) {
         if (conjuntoDeCuentas.containsKey(user)) {
             Cuenta cuenta = conjuntoDeCuentas.get(user);
