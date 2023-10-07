@@ -11,16 +11,14 @@ public class ServicioMenu {
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     //SERVICIOS
-    ServicioBanco sB;
+    ServicioBanco sB=new ServicioBanco();
     ServicioCuenta sC;
 
     //VARIBLES GLOBALES A LA CLASE
     boolean estadoValidacion = false;
     Cuenta cuenta1 = new Cuenta();
 
-
     public void login() {
-        sB = new ServicioBanco();
         System.out.println("----LOGIN----");
         do {
             menuLogin();
@@ -37,18 +35,20 @@ public class ServicioMenu {
         if (estadoValidacion) {
             if (sB.chequearAdmin(cuenta1.getUsuario())) {
                 menuAdmin();
+            } else {
+                menuNoAdmin();
             }
-        } else {
-            menuNoAdmin();
         }
+        System.out.println("Login FALLIDO");
     }
 
     public void menuAdmin() {
         sC = new ServicioCuenta();
         int opcion = 0;
-        System.out.println("Hola admin");
+        System.out.println("---MENU ADMIN---");
+        System.out.println("");
         do {
-            try{
+            try {
                 System.out.println("1) Crear cuenta:");
                 System.out.println("2) Ver cuentas:");
                 System.out.println("3) Salir:");
@@ -63,41 +63,51 @@ public class ServicioMenu {
                     case 3:
                         System.exit(0);
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println("Valor incorrecto, por favor, ingresa una opcion valida: ");
                 leer.next();
-                opcion= -1;
+                opcion = -1;
             }
         } while (opcion != 3);
     }
 
     public void menuNoAdmin() {
-        System.out.println("no soy admin :( ");
+
         sC = new ServicioCuenta();
-        int opcion = 0;
+        Integer opcion = 0;
         do {
-            try{
+            try {
                 System.out.println("1) Retirar dinero:");
                 System.out.println("2) Depositar:");
                 System.out.println("3) Transferir:");
-                System.out.println("4) Salir:");
-                opcion = leer.nextInt();
+                System.out.println("4) Ver saldo:");
+                System.out.println("5) Salir:");
+
+                opcion = Integer.valueOf(leer.next());
+
                 switch (opcion) {
                     case 1:
-                        sC.crearCuenta();
+                        sB.retirarDinero(cuenta1);
                         break;
                     case 2:
-                        sB.verCuentas();
+                        sB.depositar(cuenta1);
                         break;
                     case 3:
+                        sB.transferir(cuenta1);
+                        break;
+                    case 4:
+                        sB.verSaldo(cuenta1);
+                        break;
+                    case 5:
+                        System.out.println("Saliendo, no olvides retirar tu tarjeta");
                         System.exit(0);
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println("Valor incorrecto, por favor, ingresa una opcion valida: ");
                 leer.next();
-                opcion= -1;
+                opcion = -1;
             }
-        } while (opcion != 4);
+        } while (opcion != 5);
     }
 
 }
