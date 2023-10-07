@@ -1,17 +1,13 @@
 package servicios;
 
 import entidades.Cuenta;
-
-
-import java.io.IOException;
 import java.util.Scanner;
 
 public class ServicioMenu {
-
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     //SERVICIOS
-    ServicioBanco sB=new ServicioBanco();
+    ServicioBanco sB = ServicioBanco.getInstancia() ;
     ServicioCuenta sC;
 
     //VARIBLES GLOBALES A LA CLASE
@@ -25,7 +21,6 @@ public class ServicioMenu {
         }
         while (!estadoValidacion);
     }
-
     public void menuLogin() {
         System.out.println("Ingrese su usuario:");
         cuenta1.setUsuario(leer.next());

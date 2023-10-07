@@ -8,25 +8,29 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ServicioBanco {
-    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
-    //ACA SE GUARDAN TODAS LAS CUENTAS
-    Map<String, Cuenta> conjuntoDeCuentas;
+    /*PATRON SINGLETON PARA GENERAR UNA INSTANCIA UNICA DEL SERVICIO
+     Y MANTENER UN SOLO HASHMAP A LO LARGO DE
+     TODOS LOS SERVICIOS */
+    private static final ServicioBanco instanciaSB=new ServicioBanco();
+    private Map<String, Cuenta> conjuntoDeCuentas = new HashMap<String, Cuenta>();
 
-    //DECLARACION DE CUENTAS HARDCODEADAS
-    Cuenta cuenta01 = new Cuenta("mechi", "123", 0.0);
-    Cuenta cuenta02 = new Cuenta("Quiryat", "321", 0.0);
-    Cuenta cuenta03 = new Cuenta("Ana", "567", 0.0);
-    Cuenta cuenta04 = new Cuenta("adminJon", "000", 0.0);
-
-    //SE AGREGAN CUENTAS HARDCODEADAS AL HASHMAP
-    {//TODO NO LO PUEDO HACER DENTRO DE ESTE SCOPE
+    public ServicioBanco() {
+        Cuenta cuenta01 = new Cuenta("mechi", "123", 0.0);
+        Cuenta cuenta02 = new Cuenta("Quiryat", "321", 0.0);
+        Cuenta cuenta03 = new Cuenta("Ana", "567", 0.0);
+        Cuenta cuenta04 = new Cuenta("adminJon", "000", 0.0);
         conjuntoDeCuentas.put(cuenta01.getUsuario(), cuenta01);
         conjuntoDeCuentas.put(cuenta02.getUsuario(), cuenta02);
         conjuntoDeCuentas.put(cuenta03.getUsuario(), cuenta03);
         //CUENTA ADMIN
         conjuntoDeCuentas.put(cuenta04.getUsuario(), cuenta04);
     }
+    public static ServicioBanco getInstancia(){
+        return instanciaSB;
+    }
+
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
 
     //METODOS PRINCIPALES
@@ -157,7 +161,6 @@ public class ServicioBanco {
     }
 
     public void almacenarCuenta(Cuenta cuenta1) {
-        conjuntoDeCuentas = new HashMap<String, Cuenta>();
         System.out.println("ALMACEN");
         conjuntoDeCuentas.put(cuenta1.getUsuario(), cuenta1);
     }
