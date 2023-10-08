@@ -97,7 +97,9 @@ public class ServicioMenu {
                         System.out.println("---INGRESO A TRANSFERIR---");
                         System.out.println("Ingrese cuánto dinero quiere transferir: ");
                         double montoATransferir = (leer.nextDouble());
-                        sB.transferir(cuenta1,montoATransferir);
+                        System.out.println("Ingrese la cuenta a la cual quiere transferir: ");
+                        String cuentaATransferir = leer.next();
+                        sB.transferir(cuenta1,montoATransferir,cuentaATransferir);
                         break;
                     case 4:
                         sB.verSaldo(cuenta1);

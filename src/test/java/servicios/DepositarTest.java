@@ -31,8 +31,55 @@ public class DepositarTest {
     }
 
     @Test
-    public void testDepositarDinero(){
+    public void testDepositarDinero() {
+        double saldoOriginal = cuenta01.getBalance();
+        double dineroADepositar = 1000;
+        sB.depositar(cuenta01, dineroADepositar);
+        double dineroLuegoDeDeposito = cuenta01.getBalance();
 
+        assertEquals(dineroADepositar, dineroLuegoDeDeposito - saldoOriginal, 0);
+    }
+
+    @Test
+    public void testDepositarCero() {
+        double saldoOriginal = cuenta01.getBalance();
+        double dineroADepositar = 0;
+        sB.depositar(cuenta01, dineroADepositar);
+        double dineroLuegoDeDeposito = cuenta01.getBalance();
+
+        assertEquals(0, dineroADepositar, 0);
+        assertEquals(saldoOriginal, dineroLuegoDeDeposito, 0);
+        assertEquals("Ingrese un monto mayor a 0.0", outputCaptor.toString().trim());
+    }
+
+    @Test
+    public void testDepositarCero1() {
+        double saldoOriginal = cuenta01.getBalance();
+        double dineroADepositar = 0;
+        sB.depositar(cuenta01, dineroADepositar);
+        double dineroLuegoDeDeposito = cuenta01.getBalance();
+
+        assertEquals(0, dineroADepositar, 0);
+        assertEquals(saldoOriginal, dineroLuegoDeDeposito, 0);
+
+    }
+    @Test
+    public void testDepositarValornegativo() {
+        double dineroADepositar = -100;
+        sB.depositar(cuenta01, dineroADepositar);
+        assertEquals("Ingrese un monto mayor a 0.0", outputCaptor.toString().trim());
+    }
+
+    @Test(expected = Exception.class)
+    public void testDepositarCaracterVacio() throws Exception {
+        String dineroADepositar = " ";
+        sB.depositar(cuenta01, Double.parseDouble(dineroADepositar));
+    }
+    @Test(expected = Exception.class)
+    public void testDepositarCaracterLetra() throws Exception {
+        String dineroADepositar = "s";
+        sB.depositar(cuenta01, Double.parseDouble(dineroADepositar));
+        assertEquals("Valor incorrecto, ingrese un monto correcto:", outputCaptor.toString().trim());
     }
 
 }

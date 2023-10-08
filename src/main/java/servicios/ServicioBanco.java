@@ -39,7 +39,7 @@ public class ServicioBanco {
     public void retirarDinero(Cuenta cuenta1, double dineroAretirar) {
         double balance = cuenta1.getBalance();
         try {
-            if (dineroAretirar == 0 || dineroAretirar<0) {
+            if (dineroAretirar == 0 || dineroAretirar < 0) {
                 System.out.println("Ingrese un monto mayor a 0.0 ");
 
             } else if (dineroAretirar <= balance && dineroAretirar > 0) {
@@ -56,7 +56,7 @@ public class ServicioBanco {
     }
 
 
-    public void depositar(Cuenta cuenta1,double montoADepositar) {
+    public void depositar(Cuenta cuenta1, double montoADepositar) {
         double balance = cuenta1.getBalance();
 
         try {
@@ -64,56 +64,51 @@ public class ServicioBanco {
                 cuenta1.setBalance(balance + montoADepositar);
                 System.out.println("Saldo disponible: $" + cuenta1.getBalance());
             } else {
-                System.out.println("Ingrese un monton mayor a 0.0");
+                System.out.println("Ingrese un monto mayor a 0.0");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Valor incorrecto, ingrese un monto correcto: ");
+            System.out.println("Valor incorrecto, ingrese un monto correcto:");
             leer.next();
         }
     }
 
-    public void transferir(Cuenta cuentaOrigen,double montoATransferir) {
+    public void transferir(Cuenta cuentaOrigen, double montoATransferir, String cuentaATransferir) {
 
         double balance = cuentaOrigen.getBalance();
-        String cuentaATransferir = "";
-
         try {
-            if (montoATransferir > 0 && montoATransferir <= balance) {
-                try{
-                    System.out.println("Ingrese la cuenta a la cual quiere transferir: ");
-                    cuentaATransferir = leer.next();
-                    Cuenta cuentaDestino = validarCuenta(cuentaATransferir);
-
-                    if (cuentaDestino != null) {
-                        double balanceDestino = cuentaDestino.getBalance();
-                        cuentaDestino.setBalance(balanceDestino + montoATransferir);
-
-                        System.out.println("Transferencia realizada con éxito");
-                        System.out.println("Saldo actual: $" + cuentaDestino.getBalance());
-
-                        //VALIDA SI SE ESTÁ TRANSFIRIENDO A SU PROPIA CUENTA
-                        if(!cuentaDestino.getUsuario().equals(cuentaOrigen.getUsuario()) ){
-                            restarDinero(cuentaOrigen, montoATransferir);
-                        }
-                    } else {
-                        System.out.println("---Cuenta no encontrada---");
-                    }
-
-                }catch(Exception e){
-                    System.out.println(e.getMessage());
-                    System.out.println("Cuenta incorrecta, ingrese una nueva cuenta: ");
-                    leer.next();
-                }
-            } else if (montoATransferir == 0 || montoATransferir<0) {
+            if (montoATransferir <= 0) {
                 System.out.println("Ingrese un monto mayor a $0.0");
-                System.out.println("");
-            } else {
+                return;
+            }
+            if (montoATransferir > cuentaOrigen.getBalance()) {
                 System.out.println("Saldo insuficiente");
-                System.out.println("");
+                return;
             }
         } catch (Exception e) {
             System.out.println("Ingrese un monto correcto");
+        }
+        if (montoATransferir > 0 && montoATransferir <= balance) {
+            try {
+                Cuenta cuentaDestino = validarCuenta(cuentaATransferir);
+                if (cuentaDestino != null) {
+                    double balanceDestino = cuentaDestino.getBalance();
+                    cuentaDestino.setBalance(balanceDestino + montoATransferir);
+
+                    System.out.println("Transferencia realizada con éxito");
+                    System.out.println("Saldo actual: $" + cuentaDestino.getBalance());
+
+                    //VALIDA SI SE ESTÁ TRANSFIRIENDO A SU PROPIA CUENTA
+                    if (!cuentaDestino.getUsuario().equals(cuentaOrigen.getUsuario())) {
+                        restarDinero(cuentaOrigen, montoATransferir);
+                    }
+                } else {
+                    System.out.println("---Cuenta no encontrada---");
+                }
+            } catch (Exception e) {
+                System.out.println("Cuenta incorrecta, ingrese una nueva cuenta: ");
+                leer.next();
+            }
         }
     }
 
@@ -165,6 +160,10 @@ public class ServicioBanco {
     public void almacenarCuenta(Cuenta cuenta1) {
         System.out.println("---Guardar Cuentas---");
         conjuntoDeCuentas.put(cuenta1.getUsuario(), cuenta1);
+    }
+
+    public boolean existeUsuario(String usuario) {
+        return conjuntoDeCuentas.containsKey(usuario);
     }
 
 }
