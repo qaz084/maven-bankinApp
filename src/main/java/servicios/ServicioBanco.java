@@ -95,13 +95,12 @@ public class ServicioBanco {
                     double balanceDestino = cuentaDestino.getBalance();
                     cuentaDestino.setBalance(balanceDestino + montoATransferir);
 
-                    System.out.println("Transferencia realizada con éxito");
-                    System.out.println("Saldo actual: $" + cuentaDestino.getBalance());
-
                     //VALIDA SI SE ESTÁ TRANSFIRIENDO A SU PROPIA CUENTA
                     if (!cuentaDestino.getUsuario().equals(cuentaOrigen.getUsuario())) {
                         restarDinero(cuentaOrigen, montoATransferir);
                     }
+                    System.out.println("Transferencia realizada con éxito");
+                    System.out.println("Saldo actual: $" + cuentaDestino.getBalance());
                 } else {
                     System.out.println("---Cuenta no encontrada---");
                 }
@@ -139,7 +138,7 @@ public class ServicioBanco {
         double dineroActual = cuenta.getBalance();
         double dineroFinal = dineroActual - dineroARestar;
         cuenta.setBalance(dineroFinal);
-        System.out.println("Saldo actual: $" + dineroFinal);
+//        System.out.println("Saldo actual: $" + dineroFinal);
     }
 
     public boolean validarCredenciales(String user, String password) {
