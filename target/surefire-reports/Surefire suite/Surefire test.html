@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>21/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Oct 08 21:02:33 ART 2023</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (106 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='servicios.DepositarTest.testDepositarCaracterVacio()'><b>testDepositarCaracterVacio</b><br>Test class: servicios.DepositarTest</td>
+<td></td>
+<td>0</td>
+<td>testDepositarCaracterVacio(servicios.DepositarTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirConSaldoSuficiente()'><b>testTransferirConSaldoSuficiente</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirConSaldoSuficiente(servicios.TransferirTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirCero()'><b>testTransferirCero</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirCero(servicios.TransferirTest)</td></tr>
+<tr>
+<td title='servicios.RetirarDineroTest.pruebaRetirarDineroConValorNegativo()'><b>pruebaRetirarDineroConValorNegativo</b><br>Test class: servicios.RetirarDineroTest</td>
+<td></td>
+<td>0</td>
+<td>pruebaRetirarDineroConValorNegativo(servicios.RetirarDineroTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirMontoNegativo()'><b>testTransferirMontoNegativo</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirMontoNegativo(servicios.TransferirTest)</td></tr>
+<tr>
+<td title='servicios.RetirarDineroTest.pruebaRetirarDineroConValorCERO()'><b>pruebaRetirarDineroConValorCERO</b><br>Test class: servicios.RetirarDineroTest</td>
+<td></td>
+<td>0</td>
+<td>pruebaRetirarDineroConValorCERO(servicios.RetirarDineroTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirCaracterLetra()'><b>testTransferirCaracterLetra</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirCaracterLetra(servicios.TransferirTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirConSaldoInsuficiente()'><b>testTransferirConSaldoInsuficiente</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirConSaldoInsuficiente(servicios.TransferirTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirCuentaIncorrecta()'><b>testTransferirCuentaIncorrecta</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirCuentaIncorrecta(servicios.TransferirTest)</td></tr>
+<tr>
+<td title='servicios.DepositarTest.testDepositarCero1()'><b>testDepositarCero1</b><br>Test class: servicios.DepositarTest</td>
+<td></td>
+<td>0</td>
+<td>testDepositarCero1(servicios.DepositarTest)</td></tr>
+<tr>
+<td title='servicios.DepositarTest.testDepositarCero()'><b>testDepositarCero</b><br>Test class: servicios.DepositarTest</td>
+<td></td>
+<td>0</td>
+<td>testDepositarCero(servicios.DepositarTest)</td></tr>
+<tr>
+<td title='servicios.RetirarDineroTest.pruebaRetirarDinero()'><b>pruebaRetirarDinero</b><br>Test class: servicios.RetirarDineroTest</td>
+<td></td>
+<td>0</td>
+<td>pruebaRetirarDinero(servicios.RetirarDineroTest)</td></tr>
+<tr>
+<td title='servicios.RetirarDineroTest.pruebaRetirarDineroConCaracteresNoValidos()'><b>pruebaRetirarDineroConCaracteresNoValidos</b><br>Test class: servicios.RetirarDineroTest</td>
+<td></td>
+<td>0</td>
+<td>pruebaRetirarDineroConCaracteresNoValidos(servicios.RetirarDineroTest)</td></tr>
+<tr>
+<td title='servicios.DepositarTest.testDepositarCaracterLetra()'><b>testDepositarCaracterLetra</b><br>Test class: servicios.DepositarTest</td>
+<td></td>
+<td>0</td>
+<td>testDepositarCaracterLetra(servicios.DepositarTest)</td></tr>
+<tr>
+<td title='servicios.RetirarDineroTest.pruebaRetirarDineroConSaldoInsuficiente()'><b>pruebaRetirarDineroConSaldoInsuficiente</b><br>Test class: servicios.RetirarDineroTest</td>
+<td></td>
+<td>0</td>
+<td>pruebaRetirarDineroConSaldoInsuficiente(servicios.RetirarDineroTest)</td></tr>
+<tr>
+<td title='servicios.DepositarTest.testDepositarDinero()'><b>testDepositarDinero</b><br>Test class: servicios.DepositarTest</td>
+<td></td>
+<td>0</td>
+<td>testDepositarDinero(servicios.DepositarTest)</td></tr>
+<tr>
+<td title='servicios.DepositarTest.testDepositarValornegativo()'><b>testDepositarValornegativo</b><br>Test class: servicios.DepositarTest</td>
+<td></td>
+<td>0</td>
+<td>testDepositarValornegativo(servicios.DepositarTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirCuentaCaracterIncorrecto()'><b>testTransferirCuentaCaracterIncorrecto</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirCuentaCaracterIncorrecto(servicios.TransferirTest)</td></tr>
+<tr>
+<td title='com.mechi.AppTest.shouldAnswerWithTrue()'><b>shouldAnswerWithTrue</b><br>Test class: com.mechi.AppTest</td>
+<td></td>
+<td>0</td>
+<td>shouldAnswerWithTrue(com.mechi.AppTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirAPropiaCuenta()'><b>testTransferirAPropiaCuenta</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirAPropiaCuenta(servicios.TransferirTest)</td></tr>
+<tr>
+<td title='servicios.TransferirTest.testTransferirCaracterVacio()'><b>testTransferirCaracterVacio</b><br>Test class: servicios.TransferirTest</td>
+<td></td>
+<td>0</td>
+<td>testTransferirCaracterVacio(servicios.TransferirTest)</td></tr>
+</table><p>
+</body>
+</html>

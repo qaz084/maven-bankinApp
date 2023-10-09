@@ -74,6 +74,6 @@ public class RetirarDineroTest {
         double dineroARetirar = 0;
 
         sB.retirarDinero(cuenta01, dineroARetirar);
-        assertEquals("Valor incorrecto, ingrese un número: ", outputCaptor.toString().trim());
+        assertEquals("Ingrese un monto mayor a 0.0", outputCaptor.toString().trim());
     }
 }

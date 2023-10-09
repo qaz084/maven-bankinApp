@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="21" passed="21" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-10-08T21:02:33 ART" name="Surefire suite" finished-at="2023-10-08T21:02:34 ART" duration-ms="106">
+    <groups>
+    </groups>
+    <test started-at="2023-10-08T21:02:33 ART" name="Surefire test" finished-at="2023-10-08T21:02:34 ART" duration-ms="106">
+      <class name="servicios.TransferirTest">
+        <test-method signature="testTransferirCaracterLetra() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirCaracterLetra" finished-at="2023-10-08T21:02:34 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirCaracterLetra -->
+        <test-method signature="testTransferirCaracterVacio() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirCaracterVacio" finished-at="2023-10-08T21:02:34 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirCaracterVacio -->
+        <test-method signature="testTransferirConSaldoSuficiente() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirConSaldoSuficiente" finished-at="2023-10-08T21:02:34 ART" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirConSaldoSuficiente -->
+        <test-method signature="testTransferirCero() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirCero" finished-at="2023-10-08T21:02:34 ART" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirCero -->
+        <test-method signature="testTransferirMontoNegativo() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirMontoNegativo" finished-at="2023-10-08T21:02:34 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirMontoNegativo -->
+        <test-method signature="testTransferirConSaldoInsuficiente() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirConSaldoInsuficiente" finished-at="2023-10-08T21:02:34 ART" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirConSaldoInsuficiente -->
+        <test-method signature="testTransferirCuentaCaracterIncorrecto() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirCuentaCaracterIncorrecto" finished-at="2023-10-08T21:02:34 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirCuentaCaracterIncorrecto -->
+        <test-method signature="testTransferirAPropiaCuenta() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirAPropiaCuenta" finished-at="2023-10-08T21:02:34 ART" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirAPropiaCuenta -->
+        <test-method signature="testTransferirCuentaIncorrecta() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testTransferirCuentaIncorrecta" finished-at="2023-10-08T21:02:34 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTransferirCuentaIncorrecta -->
+      </class> <!-- servicios.TransferirTest -->
+      <class name="servicios.DepositarTest">
+        <test-method signature="testDepositarCaracterLetra() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testDepositarCaracterLetra" finished-at="2023-10-08T21:02:34 ART" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDepositarCaracterLetra -->
+        <test-method signature="testDepositarDinero()" started-at="2023-10-08T21:02:34 ART" name="testDepositarDinero" finished-at="2023-10-08T21:02:34 ART" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDepositarDinero -->
+        <test-method signature="testDepositarCaracterVacio() throws java.lang.Exception" started-at="2023-10-08T21:02:34 ART" name="testDepositarCaracterVacio" finished-at="2023-10-08T21:02:34 ART" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDepositarCaracterVacio -->
+        <test-method signature="testDepositarCero1()" started-at="2023-10-08T21:02:34 ART" name="testDepositarCero1" finished-at="2023-10-08T21:02:34 ART" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDepositarCero1 -->
+        <test-method signature="testDepositarCero()" started-at="2023-10-08T21:02:34 ART" name="testDepositarCero" finished-at="2023-10-08T21:02:34 ART" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDepositarCero -->
+        <test-method signature="testDepositarValornegativo()" started-at="2023-10-08T21:02:34 ART" name="testDepositarValornegativo" finished-at="2023-10-08T21:02:34 ART" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDepositarValornegativo -->
+      </class> <!-- servicios.DepositarTest -->
+      <class name="servicios.RetirarDineroTest">
+        <test-method signature="pruebaRetirarDinero()" started-at="2023-10-08T21:02:34 ART" name="pruebaRetirarDinero" finished-at="2023-10-08T21:02:34 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaRetirarDinero -->
+        <test-method signature="pruebaRetirarDineroConCaracteresNoValidos()" started-at="2023-10-08T21:02:34 ART" name="pruebaRetirarDineroConCaracteresNoValidos" finished-at="2023-10-08T21:02:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaRetirarDineroConCaracteresNoValidos -->
+        <test-method signature="pruebaRetirarDineroConValorNegativo()" started-at="2023-10-08T21:02:34 ART" name="pruebaRetirarDineroConValorNegativo" finished-at="2023-10-08T21:02:34 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaRetirarDineroConValorNegativo -->
+        <test-method signature="pruebaRetirarDineroConValorCERO()" started-at="2023-10-08T21:02:34 ART" name="pruebaRetirarDineroConValorCERO" finished-at="2023-10-08T21:02:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaRetirarDineroConValorCERO -->
+        <test-method signature="pruebaRetirarDineroConSaldoInsuficiente()" started-at="2023-10-08T21:02:34 ART" name="pruebaRetirarDineroConSaldoInsuficiente" finished-at="2023-10-08T21:02:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaRetirarDineroConSaldoInsuficiente -->
+      </class> <!-- servicios.RetirarDineroTest -->
+      <class name="com.mechi.AppTest">
+        <test-method signature="shouldAnswerWithTrue()" started-at="2023-10-08T21:02:34 ART" name="shouldAnswerWithTrue" finished-at="2023-10-08T21:02:34 ART" duration-ms="16" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldAnswerWithTrue -->
+      </class> <!-- com.mechi.AppTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
